@@ -13,7 +13,7 @@ WORKDIR /opt
 
 ARG TARGETOS TARGETARCH
 
-RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} make token-refresher
+RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o token-refresher .
 
 FROM registry.access.redhat.com/ubi9/ubi-minimal:latest AS runner
 
